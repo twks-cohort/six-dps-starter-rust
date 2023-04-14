@@ -75,7 +75,7 @@ workflows:
       - deploy:
           context: << pipeline.parameters.context >>
           name: Deploy to Dev Namespace
-          cluster: prod-us-east-1
+          cluster: nonprod-us-east-2
           environment: dev
 
 jobs:
@@ -101,7 +101,7 @@ jobs:
           command: |
             helm upgrade \
             --install \
-            --namespace twdps-core-labs-team-<< parameters.environment >> \
+            --namespace team_six-<< parameters.environment >> \
             --values deployment/values-<< parameters.environment >>.yaml \
             --cleanup-on-fail \
             --atomic \
