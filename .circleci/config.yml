@@ -12,7 +12,7 @@ parameters:
   context:
     description: circleci context for all jobs
     type: string
-    default: twdps-core-labs-team
+    default: cohorts
   shell-options:
     description: shell options for all jobs
     type: string
