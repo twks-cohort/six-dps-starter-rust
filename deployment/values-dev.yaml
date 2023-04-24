@@ -1,7 +1,8 @@
 ---
 hosts:
-  - basic-bot.nonprod-us-east-2.twdps.io 
+  - six-lab-basic-bot.nonprod-us-east-2.twdps.io 
 gateways:
   - istio-system/dev-six-twdps-io-gateway
 image:
-  tag: c7cf04c
+  tag: nonprod.c7cf04c
+

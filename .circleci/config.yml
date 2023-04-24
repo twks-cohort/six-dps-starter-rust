@@ -105,5 +105,5 @@ jobs:
             --values deployment/values-<< parameters.environment >>.yaml \
             --cleanup-on-fail \
             --atomic \
-            basic-bot \
+            six-lab-basic-bot \
             ./chart
