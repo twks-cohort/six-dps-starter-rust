@@ -63,7 +63,7 @@ workflows:
           # health-url: "http://0.0.0.0:8000/v1/teams/healthz"
           port-definition: "8000:8000"
           after-push:
-            - cosign/install
+            - cosign/install:
                 cosign-version: v2.0.1
             - cosign/sign:
                 registry: << pipeline.parameters.registry >>
