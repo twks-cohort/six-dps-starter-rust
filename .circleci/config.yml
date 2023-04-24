@@ -93,6 +93,11 @@ jobs:
     steps:
       - checkout
       - run:
+        name: inject env variables
+        command: | 
+          op inject -i op.env -o $BASH_ENV
+          source $BASH_ENV
+      - run:
           name: pull kubeconfig
           command: |
             mkdir -p ~/.kube
