@@ -20,7 +20,7 @@ parameters:
   registry:
     description: publish to this registry
     type: string
-    default: ghcr.io/thoughtworks-dps
+    default: ghcr.io/twks-cohort
   executor-image:
     description: image to use for local jobs
     type: string
@@ -64,10 +64,11 @@ workflows:
           port-definition: "8000:8000"
           after-push:
             - cosign/install
+                cosign-version: v2.0.1
             - cosign/sign:
                 registry: << pipeline.parameters.registry >>
                 image: six-lab-basic-bot
-                tag: dev.${CIRCLE_SHA1:0:7}
+                tag: nonprod.${CIRCLE_SHA1:0:7}
           filters: *on-push-main
 
   development-deploy-wip:

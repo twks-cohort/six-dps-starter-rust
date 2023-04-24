@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: six-lab-basic-bot
-        image: ghcr.io/ThoughtWorks-DPS/six-lab-basic-bot:latest
+        image: ghcr.io/twks-cohort/six-lab-basic-bot:latest
         env:
         - name: DISCORD_TOKEN
           valueFrom:
