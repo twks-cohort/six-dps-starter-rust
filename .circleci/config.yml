@@ -77,7 +77,7 @@ workflows:
           context: << pipeline.parameters.context >>
           name: Deploy to Dev Namespace
           cluster: nonprod-us-east-2
-          environment: dev
+          environment: nonprod
 
 jobs:
   deploy:
