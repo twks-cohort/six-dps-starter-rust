@@ -65,20 +65,22 @@ workflows:
           after-push:
             - cosign/install:
                 cosign-version: v2.0.1
+            - run:
+                name: Confirm Docker registry credentials are configured and correct
+                command: |
+                  echo 'write to .docker/config.json is secure in ephemeral runtime environment'
+                  echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_LOGIN} --password-stdin << pipeline.parameters.registry >>
             - cosign/sign:
                 registry: << pipeline.parameters.registry >>
                 image: six-lab-basic-bot
                 tag: nonprod.${CIRCLE_SHA1:0:7}
           filters: *on-push-main
-
-  development-deploy-wip:
-    jobs:
       - deploy:
+          requires: secure-build
           context: << pipeline.parameters.context >>
           name: Deploy to Dev Namespace
           cluster: nonprod-us-east-2
           environment: nonprod
-
 jobs:
   deploy:
     docker:
