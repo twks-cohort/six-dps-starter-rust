@@ -76,7 +76,8 @@ workflows:
                 tag: nonprod.${CIRCLE_SHA1:0:7}
           filters: *on-push-main
       - deploy:
-          requires: secure-build
+          requires: 
+            - secure-build
           context: << pipeline.parameters.context >>
           name: Deploy to Dev Namespace
           cluster: nonprod-us-east-2
