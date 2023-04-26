@@ -48,6 +48,8 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      imagePullSecrets:
+        - name: ghcr
       volumes:
         - name: opa-config-vol
           configMap:

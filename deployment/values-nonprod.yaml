@@ -4,5 +4,5 @@ hosts:
 gateways:
   - istio-system/dev-six-twdps-io-gateway
 image:
-  tag: nonprod.c7cf04c
+  tag: latest 
 

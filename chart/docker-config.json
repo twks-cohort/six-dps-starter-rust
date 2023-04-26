@@ -1,0 +1,9 @@
+{
+    "auths":
+    {
+      "ghcr.io":
+      {
+        "auth":"<Insert base 64 encoded username token>"
+      }
+    }
+  }
