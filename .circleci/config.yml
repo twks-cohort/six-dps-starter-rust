@@ -64,7 +64,7 @@ workflows:
           port-definition: "8000:8000"
           after-push:
             - cosign/install:
-                cosign-version: v2.0.1
+                cosign-version: v2.0.0
             - cosign/sign:
                 registry: << pipeline.parameters.registry >>
                 image: six-lab-basic-bot
