@@ -3,6 +3,3 @@ hosts:
   - six-lab-basic-bot.nonprod-us-east-2.twdps.io 
 gateways:
   - istio-system/dev-six-twdps-io-gateway
-image:
-  tag: latest 
-

@@ -100,6 +100,10 @@ jobs:
           command: |
             mkdir -p ~/.kube
             ENV=<< parameters.cluster >> op inject -i tpl/kubeconfig.tpl -o ~/.kube/config
+      - run: 
+          name: inject docker-config
+          command: | 
+            op inject -i ./chart/docker-config.json.tpl -o ./chart/docker-config.json
       - run:
           name: Deploy via Helm
           command: |
@@ -107,6 +111,7 @@ jobs:
             --install \
             --namespace team-six-<< parameters.environment >> \
             --values deployment/values-<< parameters.environment >>.yaml \
+            --set image.tag=dev.${CIRCLE_SHA1:0:7}
             --cleanup-on-fail \
             --atomic \
             six-lab-basic-bot \
