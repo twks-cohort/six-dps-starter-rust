@@ -1,5 +1,5 @@
 ---
 hosts:
-  - six-lab-basic-bot.nonprod-us-east-2.twdps.io 
+  - six-lab-basic-bot.cdicohorts-six.com
 gateways:
-  - istio-system/dev-six-twdps-io-gateway
+  - istio-system/cdicohorts-six-com-gateway
