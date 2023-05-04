@@ -1,5 +1,5 @@
 ---
 hosts:
-  - six-lab-basic-bot.cdicohorts-six.com
+  - six-lab-basic-bot.nonprod-us-east-2.cdicohorts-six.com
 gateways:
   - istio-system/nonprod-us-east-2-cdicohorts-six-com-gateway
